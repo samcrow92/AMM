@@ -1,0 +1,54 @@
+{% extends "app/layout.html" %}
+{% block content %}
+{% load staticfiles %}
+
+
+<title>Image Processing Toolbox</title>
+
+<H1>Image Processing Toolbox</H!>
+
+
+<!--
+<div>
+    <form action="/runButton/" method="GET">
+        {% csrf_token %}
+        <button type="submit" name="testScript">Test Script</button>
+    </form>
+</div>
+<img src="{% static "../../ProcessedImages/2.jpg"%}" >
+-->
+
+<table style="width:100%">
+   <!--First row-->
+    <tr>
+    <!--First column-->
+    <th>
+        <h3>Simple Input operations</h3> 
+    </th>
+    <!--Second column-->
+    <th>
+        <h3>Output image</h3> </tr>
+    </th>
+    </tr>
+
+    <!--Second row-->
+    <tr>
+        <!--First button-->
+        <td>
+            <form action="/grayscale/" method="GET">
+            {% csrf_token %}
+            <button type="submit" name="GrayScaleOperation">Grayscale Operation</button>
+            </form>
+        </td>
+        <!--Output image-->
+        <td  rowspan="100">
+            <img src="{% static "../../ProcessedImages/2.jpg"%}" >
+        </td>
+    </tr>
+
+
+</table>
+
+
+
+{% endblock %}
